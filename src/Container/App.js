@@ -60,7 +60,7 @@ class App extends Component {
   }
   onButtonSubmit = () => {
     this.setState({imageUrl : this.state.input})
-    fetch('http://localhost:3000/input', {
+    fetch('https://salty-lake-66087.herokuapp.com/input', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -69,8 +69,10 @@ class App extends Component {
     })
     .then(response => response.json())
     .then( response => {
-      if (response) {
-        fetch('http://localhost:3000/image', {
+      console.log(response.status.code)
+      if (response.status.code === 10000) {
+        console.log('hello')
+        fetch('https://salty-lake-66087.herokuapp.com/image', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({

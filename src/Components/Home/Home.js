@@ -17,7 +17,7 @@ class Home extends Component {
 	componentDidMount() {
 		const { user } = this.props
 		// console.log(id)
-	    fetch(`http://localhost:3000/profile/${user.id}`)
+	    fetch(`https://salty-lake-66087.herokuapp.com/profile/${user.id}`)
 			.then(response => response.json())
 			.then( user => {
 				console.log(user)
