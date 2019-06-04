@@ -22,8 +22,7 @@ class Signin extends Component {
 	onSubmitSignIn = () => {
 		fetch('https://salty-lake-66087.herokuapp.com/signin', {
 			method: 'post',
-			headers: {'Content-Type': 'application/json'},
-			Access-Control-Allow-Origin: *,
+			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' },
 			body: JSON.stringify({
 				email: this.state.signInEmail,
 				password: this.state.signInPassword

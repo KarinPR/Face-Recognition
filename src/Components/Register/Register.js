@@ -27,8 +27,7 @@ class Register extends Component {
 	onSubmitRegister = () => {
 		fetch('https://salty-lake-66087.herokuapp.com/register', {
 			method: 'post',
-			headers: {'Content-Type': 'application/json'},
-			Access-Control-Allow-Origin: *,
+			headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'},
 			body: JSON.stringify({
 				name: this.state.registerName,
 				email: this.state.registerEmail,
