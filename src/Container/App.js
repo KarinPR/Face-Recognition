@@ -63,6 +63,7 @@ class App extends Component {
     fetch('https://salty-lake-66087.herokuapp.com/input', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
+      Access-Control-Allow-Origin: *,
       body: JSON.stringify({
         input: this.state.input
       })
@@ -75,6 +76,7 @@ class App extends Component {
         fetch('https://salty-lake-66087.herokuapp.com/image', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
+          Access-Control-Allow-Origin: *,
           body: JSON.stringify({
             id: this.state.user.id
           })
